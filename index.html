@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionX</title>
+  <style>
+    @keyframes zoomIn {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    #visionxHeader {
+      font-size: 44px;
+      margin-bottom: 60px;
+      animation: zoomIn 8s infinite;
+    }
+
+    #exploreButton {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      font-size: 18px;
+      height: 40px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 3s;
+    }
+
+    #exploreButton:hover {
+      background-color: #45a049;
+      box-shadow: 7px -8px 10px 0 rgb(0 147 16 / 50%), 0 0 20px 0 rgba(0, 0, 0, 0.3);
+      transition: background-color 3s;
+
+    }
+  </style>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-sky src="#background" rotation="0 -90 0"></a-sky>
+    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;">
+      <div style="background-color: rgba(255, 255, 255, 0.9); width: 400px; height: 300px; 
+            border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            text-align: center; box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+            background-image: linear-gradient(to bottom right, rgb(255 255 255 / 10%), rgb(183 255 165 / 50%));">
+        <h1 id="visionxHeader">VISIONX</h1>
+        <button id="exploreButton">Explore More</button>
+
+      </div>
+    </div>
+
+    <a-assets>
+      <img id="background" src="/3d/bg2.jpeg">
+    </a-assets>
+  </a-scene>
+
+  <script>
+    document.getElementById('exploreButton').addEventListener('click', function () {
+      window.location.href = '/visionx/portal.html';
+    });
+  </script>
+</body>
+
+</html>
